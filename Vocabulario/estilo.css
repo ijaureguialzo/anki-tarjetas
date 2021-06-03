@@ -30,11 +30,32 @@ p {
     margin: 0;
 }
 
-.transcripcion {
-    font-family: kyokasho, YuKyokasho, Mincho, cursive;
-}
-
 .traduccion {
     font-size: 14pt;
     margin-top: 1em;
+}
+
+#oculto {
+    display: none;
+}
+
+#enlace {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bloque {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column-reverse;
+}
+
+.letra {
+    font-size: 100%;
+}
+
+.furigana {
+    font-size: 40%;
 }

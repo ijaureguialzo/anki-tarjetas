@@ -1,1 +1,49 @@
-<a class="enlace" href="https://jisho.org/search/{{ Palabra }}">{{ Palabra }}</a>
+<a id="enlace" class="enlace"></a>
+
+<span id="oculto">{{ Palabra }}</span>
+
+<script>
+
+    void function () {
+
+        const inicio = '「'; // Delimitadores del furigana
+        const fin = '」';
+
+        let str = document.getElementById("oculto").innerText;
+
+        let resultado = ''; // Grupo de spans para mostrar la palabra con furigana
+        let palabra = '';   // La palabra tal cual
+
+        for (let i = 0; i < str.length; i++) {
+
+            resultado += '<span class="bloque">';
+
+            let letra = str.charAt(i);
+            let furigana = '';
+
+            if (str.charAt(i + 1) === inicio) {
+
+                let j = i + 2;
+                while (j < str.length && str.charAt(j) !== fin) {
+                    furigana += str.charAt(j);
+                    j++;
+                }
+
+                resultado += '<span class="letra">' + letra + '</span>';
+                resultado += '<span class="furigana">' + furigana + '</span>';
+
+                i = j;  // Saltamos después del delimitador de fin
+
+            } else {
+                resultado += '<span class="letra">' + letra + '</span>';
+            }
+
+            resultado += '</span>';
+            palabra += letra;
+        }
+
+        document.getElementById('enlace').innerHTML = resultado;
+        document.getElementById('enlace').href = 'https://jisho.org/search/' + palabra;
+    }();
+
+</script>
