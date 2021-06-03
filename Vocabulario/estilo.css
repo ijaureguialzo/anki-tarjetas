@@ -5,7 +5,7 @@
 
 .card {
     font-family: Arial, sans-serif;
-    font-size: 24pt;
+    font-size: 36pt;
     text-align: center;
     color: black;
     background-color: white;
@@ -31,7 +31,7 @@ p {
 }
 
 .traduccion {
-    font-size: 14pt;
+    font-size: 35%;
     margin-top: 1em;
 }
 
@@ -43,6 +43,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .bloque {
