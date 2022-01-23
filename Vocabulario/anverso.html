@@ -6,6 +6,7 @@
 
     void function () {
 
+        const marcador = '§';   // Delimitador de comienzo de una palabra con múltiples caracteres. Ejemplo: §今日「きょう」
         const inicio = '「'; // Delimitadores del furigana. Ejemplo: 習「なら」います
         const fin = '」';
 
@@ -19,6 +20,17 @@
             resultado += '<span class="bloque">';
 
             let letra = str.charAt(i);
+
+            if (letra === marcador) {
+                letra = '';
+                let j = i + 1;
+                while (j < str.length && str.charAt(j) !== inicio) {
+                    letra += str.charAt(j);
+                    j++;
+                }
+                i = j - 1;
+            }
+
             let furigana = '';
 
             if (str.charAt(i + 1) === inicio) {
