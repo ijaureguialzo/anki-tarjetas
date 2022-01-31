@@ -5,7 +5,7 @@
 
 .card {
     font-family: Arial, sans-serif;
-    font-size: 36pt;
+    font-size: 14pt;
     text-align: center;
     color: black;
     background-color: white;
@@ -19,6 +19,7 @@
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
     text-decoration: none;
     font-weight: bold;
+    font-size: 250%;
     color: #3F638B;
 }
 
@@ -31,7 +32,6 @@ p {
 }
 
 .traduccion {
-    font-size: 35%;
     margin-top: 1em;
 }
 
