@@ -5,7 +5,7 @@
 
 .card {
     font-family: Arial, sans-serif;
-    font-size:14pt;
+    font-size: 14pt;
     text-align: center;
     color: black;
     background-color: white;
@@ -19,7 +19,7 @@
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
     text-decoration: none;
     font-weight: bold;
-    font-size:250%;
+    font-size: 250%;
     color: #3F638B;
 }
 
@@ -86,4 +86,11 @@ td {
 
 .kyokasho {
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
+}
+
+.furiganable {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
