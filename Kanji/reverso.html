@@ -1,0 +1,135 @@
+{{FrontSide}}
+
+<hr id="answer">
+
+<h5>Significados</h5>
+
+<table>
+    {{#Significado 1}}
+    <tr>
+        <th>{{ Significado 1 }}</th>
+        <td>{{ Significado 1 - Traducción }}</td>
+    </tr>
+    {{/Significado 1}}
+
+    {{#Significado 2}}
+    <tr>
+        <th>{{ Significado 2 }}</th>
+        <td>{{ Significado 2 - Traducción }}</td>
+    </tr>
+    {{/Significado 2}}
+
+    {{#Significado 3}}
+    <tr>
+        <th>{{ Significado 3 }}</th>
+        <td>{{ Significado 3 - Traducción }}</td>
+    </tr>
+    {{/Significado 3}}
+
+</table>
+
+<h5>Lecturas</h5>
+<div>
+    <p class="kyokasho">{{Kun-Yomi}}</p>
+    <hr style="width:50%;">
+    <p class="kyokasho">{{On-Yomi}}</p>
+</div>
+
+<h5>Trazos</h5>
+<div>
+    <span>{{Trazos}}</span>
+    <span class="trazos">{{kakijun:Kanji}}</span>
+</div>
+
+<h5>Ejemplos</h5>
+
+<table>
+    {{#Ejemplo 1}}
+    <tr>
+        <th><span class="furiganable">{{ Ejemplo 1 }}</span></th>
+        <td>{{ Ejemplo 1 - Traducción }}</td>
+    </tr>
+    {{/Ejemplo 1}}
+
+    {{#Ejemplo 2}}
+    <tr>
+        <th><span class="furiganable">{{ Ejemplo 2 }}</span></th>
+        <td>{{ Ejemplo 2 - Traducción }}</td>
+    </tr>
+    {{/Ejemplo 2}}
+
+    {{#Ejemplo 3}}
+    <tr>
+        <th><span class="furiganable">{{ Ejemplo 3 }}</span></th>
+        <td>{{ Ejemplo 3 - Traducción }}</td>
+    </tr>
+    {{/Ejemplo 3}}
+
+    {{#Ejemplo 4}}
+    <tr>
+        <th><span class="furiganable">{{ Ejemplo 4 }}</span></th>
+        <td>{{ Ejemplo 4 - Traducción }}</td>
+    </tr>
+    {{/Ejemplo 4}}
+
+</table>
+
+<script>
+
+    void function () {
+
+        const marcador = '§';   // Delimitador de comienzo de una palabra con múltiples caracteres. Ejemplo: §今日「きょう」
+        const inicio = '「'; // Delimitadores del furigana. Ejemplo: 習「なら」います
+        const fin = '」';
+
+        // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
+
+        let str = document.getElementById("oculto").innerText;
+
+        let resultado = ''; // Grupo de spans para mostrar la palabra con furigana
+        let palabra = '';   // La palabra tal cual
+
+        for (let i = 0; i < str.length; i++) {
+
+            resultado += '<span class="bloque">';
+
+            let letra = str.charAt(i);
+
+            if (letra === marcador) {
+                letra = '';
+                let j = i + 1;
+                while (j < str.length && str.charAt(j) !== inicio) {
+                    letra += str.charAt(j);
+                    j++;
+                }
+                i = j - 1;
+            }
+
+            let furigana = '';
+
+            if (str.charAt(i + 1) === inicio) {
+
+                let j = i + 2;
+                while (j < str.length && str.charAt(j) !== fin) {
+                    furigana += str.charAt(j);
+                    j++;
+                }
+
+                resultado += '<span class="letra">' + letra + '</span>';
+                resultado += '<span class="furigana">' + furigana + '</span>';
+
+                i = j;  // Saltamos después del delimitador de fin
+
+            } else {
+                resultado += '<span class="letra">' + letra + '</span>';
+            }
+
+            resultado += '</span>';
+            palabra += letra;
+        }
+
+        document.getElementById('enlace').innerHTML = resultado;
+        document.getElementById('enlace').href = 'https://jisho.org/search/' + palabra;
+    }();
+
+</script>

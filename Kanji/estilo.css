@@ -1,0 +1,89 @@
+@font-face {
+    font-family: kyokasho;
+    src: url("_kyokasho.ttc");
+}
+
+.card {
+    font-family: Arial, sans-serif;
+    font-size:14pt;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.card.nightMode hr {
+    border-color: gray;
+}
+
+.enlace {
+    font-family: kyokasho, YuKyokasho, Mincho, cursive;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:250%;
+    color: #3F638B;
+}
+
+.trazos {
+    font-family: kyokasho, YuKyokasho, Mincho, cursive;
+}
+
+.card.nightMode .enlace {
+    color: #FFCC00;
+}
+
+p {
+    margin: 0;
+}
+
+.traduccion {
+    margin-top: 1em;
+}
+
+#oculto {
+    display: none;
+}
+
+#enlace {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bloque {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column-reverse;
+}
+
+.letra {
+    font-size: 100%;
+}
+
+.furigana {
+    font-size: 40%;
+}
+
+table {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid black;
+}
+
+tr {
+    background-color: #eee;
+}
+
+th {
+    font-family: kyokasho, YuKyokasho, Mincho, cursive;
+    font-weight: normal;
+}
+
+td {
+    font-size: 80%;
+}
+
+.kyokasho {
+    font-family: kyokasho, YuKyokasho, Mincho, cursive;
+}
