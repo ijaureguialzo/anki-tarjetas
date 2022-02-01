@@ -68,20 +68,21 @@ p {
 table {
     margin: 0 auto;
     width: 90%;
-    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 tr {
-    background-color: #eee;
 }
 
 th {
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
     font-weight: normal;
+    border: 1px solid black;
+    font-size: 150%;
 }
 
 td {
-    font-size: 80%;
+    border: 1px solid black;
 }
 
 .kyokasho {
@@ -93,4 +94,13 @@ td {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.card.nightMode th {
+    color: #FFCC00;
+    border: 1px solid gray;
+}
+
+.card.nightMode td {
+    border: 1px solid gray;
 }
