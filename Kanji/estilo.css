@@ -11,8 +11,18 @@
     background-color: white;
 }
 
+hr {
+    border: 0.5px solid black;
+    background-color: black;
+}
+
 .card.nightMode hr {
-    border-color: gray;
+    border: 0.5px solid gray;
+    background-color: gray;
+}
+
+.card.nightMode h5 {
+    color: gray;
 }
 
 .enlace {
@@ -70,14 +80,13 @@ table {
     border-collapse: collapse;
 }
 
-tr {
-}
 
 th {
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
     font-weight: normal;
     border: 1px solid black;
     font-size: 150%;
+    color: #3F638B;
 }
 
 td {
@@ -86,6 +95,11 @@ td {
 
 .kyokasho {
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
+    color: #3F638B;
+}
+
+.card.nightMode .kyokasho {
+    color: #FFCC00;
 }
 
 .furiganable {
@@ -131,11 +145,29 @@ td {
         width: 100%;
     }
 
-    th {
+    th, .card.nightMode th {
+        border-top: none;
         border-bottom: none;
+        padding-top: 0.5em;
     }
 
-    td {
-        margin-bottom: 0.5em;
+    tr:first-child th {
+        border-top: 1px solid black;
+    }
+
+    .card.nightMode tr:first-child th {
+        border-top: 1px solid gray;
+    }
+
+    td, .card.nightMode td {
+        border-top: none;
+        padding-bottom: 0.75em;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    th, .card.nightMode th {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
     }
 }
