@@ -1,6 +1,4 @@
-<a id="enlace" class="enlace"></a>
-
-<span id="oculto">{{ Palabra }}</span>
+<a class="kyokasho furiganable mediano">{{ Palabra }}</a>
 
 <script>
 
@@ -10,52 +8,66 @@
         const inicio = '「'; // Delimitadores del furigana. Ejemplo: 習「なら」います
         const fin = '」';
 
-        let str = document.getElementById("oculto").innerText;
+        let furiganables = document.getElementsByClassName("furiganable");
 
-        let resultado = ''; // Grupo de spans para mostrar la palabra con furigana
-        let palabra = '';   // La palabra tal cual
+        for (let i = 0; i < furiganables.length; i++) {
 
-        for (let i = 0; i < str.length; i++) {
+            let furiganable = furiganables[i];
 
-            resultado += '<span class="bloque">';
+            let resultado = ''; // Grupo de spans para mostrar la palabra con furigana
+            let palabra = '';   // La palabra tal cual
 
-            let letra = str.charAt(i);
+            let str = furiganable.innerText;
 
-            if (letra === marcador) {
-                letra = '';
-                let j = i + 1;
-                while (j < str.length && str.charAt(j) !== inicio) {
-                    letra += str.charAt(j);
-                    j++;
-                }
-                i = j - 1;
-            }
+            for (let i = 0; i < str.length; i++) {
 
-            let furigana = '';
+                resultado += '<span class="bloque">';
 
-            if (str.charAt(i + 1) === inicio) {
+                let letra = str.charAt(i);
 
-                let j = i + 2;
-                while (j < str.length && str.charAt(j) !== fin) {
-                    furigana += str.charAt(j);
-                    j++;
+                if (letra === marcador) {
+                    letra = '';
+                    let j = i + 1;
+                    while (j < str.length && str.charAt(j) !== inicio) {
+                        letra += str.charAt(j);
+                        j++;
+                    }
+                    i = j - 1;
                 }
 
-                resultado += '<span class="letra">' + letra + '</span>';
-                resultado += '<span class="furigana">' + furigana + '</span>';
+                let furigana = '';
 
-                i = j;  // Saltamos después del delimitador de fin
+                if (str.charAt(i + 1) === inicio) {
 
-            } else {
-                resultado += '<span class="letra">' + letra + '</span>';
+                    let j = i + 2;
+                    while (j < str.length && str.charAt(j) !== fin) {
+                        furigana += str.charAt(j);
+                        j++;
+                    }
+
+                    resultado += '<span class="letra">' + letra + '</span>';
+                    resultado += '<span class="furigana">' + furigana + '</span>';
+
+                    i = j;  // Saltamos después del delimitador de fin
+
+                } else {
+                    resultado += '<span class="letra">' + letra + '</span>';
+                }
+
+                resultado += '</span>';
+                palabra += letra;
             }
 
-            resultado += '</span>';
-            palabra += letra;
+            if (furiganable.nodeName.toLowerCase() === "a") {
+                if (furiganable.classList.contains("kanji")) {
+                    furiganable.href = `https://jisho.org/search/${palabra}%20%23kanji`;
+                } else {
+                    furiganable.href = `https://jisho.org/search/${palabra}`;
+                }
+            }
+
+            furiganable.innerHTML = resultado;
         }
-
-        document.getElementById('enlace').innerHTML = resultado;
-        document.getElementById('enlace').href = 'https://jisho.org/search/' + palabra;
     }();
 
 </script>
