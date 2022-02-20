@@ -84,6 +84,10 @@ a {
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
 }
 
+.mobile .trazos {
+    display: none;
+}
+
 p {
     margin: 0;
 }
