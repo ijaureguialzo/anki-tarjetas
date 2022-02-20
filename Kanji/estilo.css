@@ -21,39 +21,37 @@ hr {
     background-color: gray;
 }
 
+h5 {
+    color: black;
+}
+
 .card.nightMode h5 {
     color: gray;
 }
 
-.enlace {
-    font-family: kyokasho, YuKyokasho, Mincho, cursive;
+a {
     text-decoration: none;
-    font-size: 500%;
+}
+
+.kyokasho {
+    font-family: kyokasho, YuKyokasho, Mincho, cursive;
     color: #3F638B;
 }
 
-.trazos {
-    font-family: kyokasho, YuKyokasho, Mincho, cursive;
-}
-
-.card.nightMode .enlace {
+.card.nightMode .kyokasho {
     color: #FFCC00;
 }
 
-p {
-    margin: 0;
+.grande {
+    font-size: 500%;
 }
 
-.traduccion {
-    margin-top: 1em;
+.w-50 {
+    width: 50%;
 }
 
-#oculto {
-    display: none;
-}
-
-#enlace {
-    display: flex;
+.furiganable {
+    display: inline-flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
@@ -74,44 +72,40 @@ p {
     font-size: 50%;
 }
 
+.centrado {
+    text-align: center;
+}
+
+.trazos {
+    font-family: kyokasho, YuKyokasho, Mincho, cursive;
+}
+
+p {
+    margin: 0;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
 table {
     margin: 0 auto;
     width: 90%;
     border-collapse: collapse;
 }
 
-
 th {
-    font-family: kyokasho, YuKyokasho, Mincho, cursive;
     font-weight: normal;
-    border: 1px solid black;
     font-size: 150%;
-    color: #3F638B;
+    border: 1px solid black;
+}
+
+.card.nightMode th {
+    border: 1px solid gray;
 }
 
 td {
     border: 1px solid black;
-}
-
-.kyokasho {
-    font-family: kyokasho, YuKyokasho, Mincho, cursive;
-    color: #3F638B;
-}
-
-.card.nightMode .kyokasho {
-    color: #FFCC00;
-}
-
-.furiganable {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card.nightMode th {
-    color: #FFCC00;
-    border: 1px solid gray;
 }
 
 .card.nightMode td {

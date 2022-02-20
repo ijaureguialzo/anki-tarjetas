@@ -7,31 +7,30 @@
 <table>
     {{#Significado 1}}
     <tr>
-        <th>{{ Significado 1 }}</th>
+        <th><span class="kyokasho">{{ Significado 1 }}</span></th>
         <td>{{ Significado 1 - Traducción }}</td>
     </tr>
     {{/Significado 1}}
 
     {{#Significado 2}}
     <tr>
-        <th>{{ Significado 2 }}</th>
+        <th><span class="kyokasho">{{ Significado 2 }}</span></th>
         <td>{{ Significado 2 - Traducción }}</td>
     </tr>
     {{/Significado 2}}
 
     {{#Significado 3}}
     <tr>
-        <th>{{ Significado 3 }}</th>
+        <th><span class="kyokasho">{{ Significado 3 }}</span></th>
         <td>{{ Significado 3 - Traducción }}</td>
     </tr>
     {{/Significado 3}}
-
 </table>
 
 <h5>Lecturas (Kun/On)</h5>
 <div>
     <p class="kyokasho">{{Kun-Yomi}}</p>
-    <hr style="width:50%;">
+    <hr class="w-50">
     <p class="kyokasho">{{On-Yomi}}</p>
 </div>
 
@@ -46,32 +45,31 @@
 <table>
     {{#Ejemplo 1}}
     <tr>
-        <th><span class="furiganable">{{ Ejemplo 1 }}</span></th>
+        <th><a class="furiganable kyokasho">{{ Ejemplo 1 }}</a></th>
         <td>{{ Ejemplo 1 - Traducción }}</td>
     </tr>
     {{/Ejemplo 1}}
 
     {{#Ejemplo 2}}
     <tr>
-        <th><span class="furiganable">{{ Ejemplo 2 }}</span></th>
+        <th><a class="furiganable kyokasho">{{ Ejemplo 2 }}</a></th>
         <td>{{ Ejemplo 2 - Traducción }}</td>
     </tr>
     {{/Ejemplo 2}}
 
     {{#Ejemplo 3}}
     <tr>
-        <th><span class="furiganable">{{ Ejemplo 3 }}</span></th>
+        <th><a class="furiganable kyokasho">{{ Ejemplo 3 }}</a></th>
         <td>{{ Ejemplo 3 - Traducción }}</td>
     </tr>
     {{/Ejemplo 3}}
 
     {{#Ejemplo 4}}
     <tr>
-        <th><span class="furiganable">{{ Ejemplo 4 }}</span></th>
+        <th><a class="furiganable kyokasho">{{ Ejemplo 4 }}</a></th>
         <td>{{ Ejemplo 4 - Traducción }}</td>
     </tr>
     {{/Ejemplo 4}}
-
 </table>
 
 <script>
@@ -130,6 +128,14 @@
 
                 resultado += '</span>';
                 palabra += letra;
+            }
+
+            if (furiganable.nodeName.toLowerCase() === "a") {
+                if (furiganable.classList.contains("kanji")) {
+                    furiganable.href = `https://jisho.org/search/${palabra}%20%23kanji`;
+                } else {
+                    furiganable.href = `https://jisho.org/search/${palabra}`;
+                }
             }
 
             furiganable.innerHTML = resultado;
