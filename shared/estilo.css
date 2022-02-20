@@ -50,6 +50,10 @@ a {
     font-size: 250%;
 }
 
+.pequenyo {
+    font-size: 125%;
+}
+
 .w-50 {
     width: 50%;
 }
@@ -93,7 +97,11 @@ p {
 }
 
 .mt-1 {
-    margin-top: 1em;
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
 }
 
 table {
