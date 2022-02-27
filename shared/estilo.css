@@ -43,14 +43,26 @@ a {
 }
 
 .grande {
-    font-size: 900%;
+    font-size: 500%;
 }
 
 .mediano {
-    font-size: 300%;
+    font-size: 175%;
 }
 
 .pequenyo {
+    font-size: 125%;
+}
+
+.mobile .grande {
+    font-size: 900%;
+}
+
+.mobile .mediano {
+    font-size: 300%;
+}
+
+.mobile .pequenyo {
     font-size: 150%;
 }
 
