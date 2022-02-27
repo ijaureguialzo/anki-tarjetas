@@ -29,9 +29,9 @@
 
 <h5>Lecturas (Kun/On)</h5>
 <div>
-    <p class="kyokasho mediano">{{Kun-Yomi}}</p>
+    <p class="kyokasho mediano separable">{{Kun-Yomi}}</p>
     <hr class="w-50">
-    <p class="kyokasho mediano">{{On-Yomi}}</p>
+    <p class="kyokasho mediano separable">{{On-Yomi}}</p>
 </div>
 
 <h5>Trazos</h5>
@@ -139,6 +139,16 @@
             }
 
             furiganable.innerHTML = resultado;
+        }
+    }();
+
+    void function () {
+
+        let separables = document.getElementsByClassName("separable");
+
+        for (let i = 0; i < separables.length; i++) {
+            let separable = separables[i];
+            separable.innerText = separable.innerText.replace(/・/g, "\n")
         }
     }();
 
