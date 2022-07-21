@@ -100,8 +100,22 @@ a {
     font-family: kyokasho, YuKyokasho, Mincho, cursive;
 }
 
+.mobile .num_trazos {
+    display: none;
+}
+
 .mobile .trazos {
     display: none;
+}
+
+.diagrama {
+    display: none;
+}
+
+.mobile .diagrama {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
 }
 
 p {
