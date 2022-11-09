@@ -95,9 +95,12 @@
 
     void function () {
 
-        const marcador = '§';   // Delimitador de comienzo de una palabra con múltiples caracteres. Ejemplo: §今日「きょう」
-        const inicio = '「'; // Delimitadores del furigana. Ejemplo: 習「なら」います
-        const fin = '」';
+        // Delimitador de comienzo de una palabra con múltiples caracteres. Ejemplo: §今日【きょう】
+        const marcador = '§'; // OPCION + K
+
+        // Delimitadores del furigana. Ejemplo: 習【なら】います
+        const inicio = '【'; // OPCION + (
+        const fin = '】';    // OPCION + )
 
         let furiganables = document.getElementsByClassName("furiganable");
 
