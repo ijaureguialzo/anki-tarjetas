@@ -1,0 +1,76 @@
+<a class="kyokasho furiganable mediano">{{ Forma Masu }}</a>
+
+<script>
+
+    void function () {
+
+        // Delimitador de comienzo de una palabra con múltiples caracteres. Ejemplo: §今日【きょう】
+        const marcador = '§'; // OPCION + K
+
+        // Delimitadores del furigana. Ejemplo: 習【なら】います
+        const inicio = '【'; // OPCION + (
+        const fin = '】';    // OPCION + )
+
+        let furiganables = document.getElementsByClassName("furiganable");
+
+        for (let i = 0; i < furiganables.length; i++) {
+
+            let furiganable = furiganables[i];
+
+            let resultado = ''; // Grupo de spans para mostrar la palabra con furigana
+            let palabra = '';   // La palabra tal cual
+
+            let str = furiganable.innerText;
+
+            for (let i = 0; i < str.length; i++) {
+
+                resultado += '<span class="bloque">';
+
+                let letra = str.charAt(i);
+
+                if (letra === marcador) {
+                    letra = '';
+                    let j = i + 1;
+                    while (j < str.length && str.charAt(j) !== inicio) {
+                        letra += str.charAt(j);
+                        j++;
+                    }
+                    i = j - 1;
+                }
+
+                let furigana = '';
+
+                if (str.charAt(i + 1) === inicio) {
+
+                    let j = i + 2;
+                    while (j < str.length && str.charAt(j) !== fin) {
+                        furigana += str.charAt(j);
+                        j++;
+                    }
+
+                    resultado += '<span class="letra">' + letra + '</span>';
+                    resultado += '<span class="furigana">' + furigana + '</span>';
+
+                    i = j;  // Saltamos después del delimitador de fin
+
+                } else {
+                    resultado += '<span class="letra">' + letra + '</span>';
+                }
+
+                resultado += '</span>';
+                palabra += letra;
+            }
+
+            if (furiganable.nodeName.toLowerCase() === "a") {
+                if (furiganable.classList.contains("kanji")) {
+                    furiganable.href = `https://jisho.org/search/${palabra}%20%23kanji`;
+                } else {
+                    furiganable.href = `https://jisho.org/search/${palabra}`;
+                }
+            }
+
+            furiganable.innerHTML = resultado;
+        }
+    }();
+
+</script>

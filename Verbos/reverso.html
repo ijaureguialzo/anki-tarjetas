@@ -1,0 +1,24 @@
+{{ FrontSide }}
+
+<p class="mt-1 mb-1">{{ Traducción 1 }}</p>
+<p class="mt-1 mb-1">{{ Traducción 2 }}</p>
+<p class="mt-1 mb-1">{{ Traducción 3 }}</p>
+
+<table>
+    {{#Forma Jisho}}
+    <tr>
+        <th>じしょ</th>
+        <td><p class="kyokasho furiganable mediano">{{ Forma Jisho }}</p></td>
+    </tr>
+    {{/Forma Jisho}}
+    {{#Forma Te}}
+    <tr>
+        <th>て</th>
+        <td><p class="kyokasho furiganable mediano">{{ Forma Te }}</p></td>
+    </tr>
+    {{/Forma Te}}
+</table>
+
+{{#Notas}}
+<p class="mt-1 mb-1">{{ Notas }}</p>
+{{/Notas}}
