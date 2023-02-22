@@ -1,5 +1,7 @@
 {{ FrontSide }}
 
+<div class="numero">{{ Grupo }}</div>
+
 <p class="mt-1 mb-1">{{ Traducción 1 }}</p>
 <p class="mt-1 mb-1">{{ Traducción 2 }}</p>
 <p class="mt-1 mb-1">{{ Traducción 3 }}</p>
@@ -7,13 +9,19 @@
 <table>
     {{#Forma Jisho}}
     <tr>
-        <th>じしょ</th>
+        <th><span class="furiganable">辞【じ】書【しょ】形【けい】</span></th>
         <td><p class="kyokasho furiganable mediano">{{ Forma Jisho }}</p></td>
     </tr>
     {{/Forma Jisho}}
+    {{#Forma Nai}}
+    <tr>
+        <th><span class="furiganable">ない形【けい】</span></th>
+        <td><p class="kyokasho furiganable mediano">{{ Forma Nai }}</p></td>
+    </tr>
+    {{/Forma Nai}}
     {{#Forma Te}}
     <tr>
-        <th>て</th>
+        <th><span class="furiganable">て形【けい】</span></th>
         <td><p class="kyokasho furiganable mediano">{{ Forma Te }}</p></td>
     </tr>
     {{/Forma Te}}
