@@ -2,94 +2,94 @@
 
 <div class="numero">{{ Número }}</div>
 
-<h5>Significados</h5>
+<div class="contenedor">
+    <div class="fila">
+        <div class="columna">
 
-<table>
-    {{#Significado 1}}
-    <tr>
-        <th><span class="kyokasho mediano">{{ Significado 1 }}</span></th>
-        <td>{{ Significado 1 - Traducción }}</td>
-    </tr>
-    {{/Significado 1}}
+            <h5>Significados</h5>
+            <table>
+                {{#Significado 1}}
+                <tr>
+                    <th><span class="kyokasho mediano">{{ Significado 1 }}</span></th>
+                    <td>{{ Significado 1 - Traducción }}</td>
+                </tr>
+                {{/Significado 1}}
+                {{#Significado 2}}
+                <tr>
+                    <th><span class="kyokasho mediano">{{ Significado 2 }}</span></th>
+                    <td>{{ Significado 2 - Traducción }}</td>
+                </tr>
+                {{/Significado 2}}
+                {{#Significado 3}}
+                <tr>
+                    <th><span class="kyokasho mediano">{{ Significado 3 }}</span></th>
+                    <td>{{ Significado 3 - Traducción }}</td>
+                </tr>
+                {{/Significado 3}}
+            </table>
 
-    {{#Significado 2}}
-    <tr>
-        <th><span class="kyokasho mediano">{{ Significado 2 }}</span></th>
-        <td>{{ Significado 2 - Traducción }}</td>
-    </tr>
-    {{/Significado 2}}
+            <h5>Lecturas</h5>
+            <div>
+                <p class="kyokasho mediano separable">{{Kun-Yomi}}</p>
+                <div style="text-align: center">
+                    <span style="font-size:50%; color:gray; vertical-align: bottom">KUN</span>
+                    <hr class="w-50" style="margin-top:4px; margin-bottom:4px;">
+                    <span style="font-size:50%; color:gray; vertical-align: top">ON</span>
+                </div>
+                <p class="kyokasho mediano separable">{{On-Yomi}}</p>
+            </div>
 
-    {{#Significado 3}}
-    <tr>
-        <th><span class="kyokasho mediano">{{ Significado 3 }}</span></th>
-        <td>{{ Significado 3 - Traducción }}</td>
-    </tr>
-    {{/Significado 3}}
-</table>
+            <h5>Trazos</h5>
+            <div>
+                <span class="num_trazos">{{Trazos}}</span>
+                <span class="trazos">{{kakijun:Kanji}}</span>
+                <span class="diagrama">{{Diagrama}}</span>
+            </div>
+        </div>
+        <div class="columna">
 
-<h5>Lecturas</h5>
-<div>
-    <p class="kyokasho mediano separable">{{Kun-Yomi}}</p>
-    <div style="text-align: center">
-        <span style="font-size:50%; color:gray; vertical-align: bottom">KUN</span>
-        <hr class="w-50" style="margin-top:4px; margin-bottom:4px;">
-        <span style="font-size:50%; color:gray; vertical-align: top">ON</span>
+            <h5>Ejemplos</h5>
+            <table>
+                {{#Ejemplo 1}}
+                <tr>
+                    <th><a class="furiganable kyokasho mediano">{{ Ejemplo 1 }}</a></th>
+                    <td>{{ Ejemplo 1 - Traducción }}</td>
+                </tr>
+                {{/Ejemplo 1}}
+                {{#Ejemplo 2}}
+                <tr>
+                    <th><a class="furiganable kyokasho mediano">{{ Ejemplo 2 }}</a></th>
+                    <td>{{ Ejemplo 2 - Traducción }}</td>
+                </tr>
+                {{/Ejemplo 2}}
+                {{#Ejemplo 3}}
+                <tr>
+                    <th><a class="furiganable kyokasho mediano">{{ Ejemplo 3 }}</a></th>
+                    <td>{{ Ejemplo 3 - Traducción }}</td>
+                </tr>
+                {{/Ejemplo 3}}
+                {{#Ejemplo 4}}
+                <tr>
+                    <th><a class="furiganable kyokasho mediano">{{ Ejemplo 4 }}</a></th>
+                    <td>{{ Ejemplo 4 - Traducción }}</td>
+                </tr>
+                {{/Ejemplo 4}}
+                {{#Ejemplo 5}}
+                <tr>
+                    <th><a class="furiganable kyokasho mediano">{{ Ejemplo 5 }}</a></th>
+                    <td>{{ Ejemplo 5 - Traducción }}</td>
+                </tr>
+                {{/Ejemplo 5}}
+                {{#Ejemplo 6}}
+                <tr>
+                    <th><a class="furiganable kyokasho mediano">{{ Ejemplo 6 }}</a></th>
+                    <td>{{ Ejemplo 6 - Traducción }}</td>
+                </tr>
+                {{/Ejemplo 6}}
+            </table>
+        </div>
     </div>
-    <p class="kyokasho mediano separable">{{On-Yomi}}</p>
 </div>
-
-<h5>Trazos</h5>
-<div>
-    <span class="num_trazos">{{Trazos}}</span>
-    <span class="trazos">{{kakijun:Kanji}}</span>
-    <span class="diagrama">{{Diagrama}}</span>
-</div>
-
-<h5>Ejemplos</h5>
-
-<table>
-    {{#Ejemplo 1}}
-    <tr>
-        <th><a class="furiganable kyokasho mediano">{{ Ejemplo 1 }}</a></th>
-        <td>{{ Ejemplo 1 - Traducción }}</td>
-    </tr>
-    {{/Ejemplo 1}}
-
-    {{#Ejemplo 2}}
-    <tr>
-        <th><a class="furiganable kyokasho mediano">{{ Ejemplo 2 }}</a></th>
-        <td>{{ Ejemplo 2 - Traducción }}</td>
-    </tr>
-    {{/Ejemplo 2}}
-
-    {{#Ejemplo 3}}
-    <tr>
-        <th><a class="furiganable kyokasho mediano">{{ Ejemplo 3 }}</a></th>
-        <td>{{ Ejemplo 3 - Traducción }}</td>
-    </tr>
-    {{/Ejemplo 3}}
-
-    {{#Ejemplo 4}}
-    <tr>
-        <th><a class="furiganable kyokasho mediano">{{ Ejemplo 4 }}</a></th>
-        <td>{{ Ejemplo 4 - Traducción }}</td>
-    </tr>
-    {{/Ejemplo 4}}
-
-    {{#Ejemplo 5}}
-    <tr>
-        <th><a class="furiganable kyokasho mediano">{{ Ejemplo 5 }}</a></th>
-        <td>{{ Ejemplo 5 - Traducción }}</td>
-    </tr>
-    {{/Ejemplo 5}}
-
-    {{#Ejemplo 6}}
-    <tr>
-        <th><a class="furiganable kyokasho mediano">{{ Ejemplo 6 }}</a></th>
-        <td>{{ Ejemplo 6 - Traducción }}</td>
-    </tr>
-    {{/Ejemplo 6}}
-</table>
 
 <script>
 

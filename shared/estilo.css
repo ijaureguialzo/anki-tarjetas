@@ -3,6 +3,27 @@
     src: url("_kyokasho.ttc");
 }
 
+.fila {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mobile .fila {
+    display: block;
+}
+
+.mobile .columna {
+    display: block;
+}
+
 .card {
     font-family: Arial, sans-serif;
     font-size: 14pt;
