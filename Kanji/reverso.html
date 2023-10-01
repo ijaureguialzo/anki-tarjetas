@@ -166,17 +166,6 @@
 
     void function () {
 
-        let separables = document.getElementsByClassName("separable");
-
-        for (let i = 0; i < separables.length; i++) {
-            let separable = separables[i];
-            separable.innerText = separable.innerText.replace(/・/g, "\n")
-        }
-    }();
-
-
-    void function () {
-
         let atenuables = document.getElementsByClassName("atenuable");
 
         const inicio = '＜';
@@ -213,4 +202,13 @@
         }
     }();
 
+    void function () {
+
+        let separables = document.getElementsByClassName("separable");
+
+        for (let i = 0; i < separables.length; i++) {
+            let separable = separables[i];
+            separable.innerHTML = separable.innerHTML.replace(/・/g, "<br>")
+        }
+    }();
 </script>
