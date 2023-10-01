@@ -38,8 +38,8 @@ hr {
 }
 
 .card.nightMode hr {
-    border: 0.5px solid gray;
-    background-color: gray;
+    border: 0.5px solid grey;
+    background-color: grey;
 }
 
 h5 {
@@ -47,7 +47,7 @@ h5 {
 }
 
 .card.nightMode h5 {
-    color: gray;
+    color: grey;
 }
 
 a {
@@ -168,7 +168,7 @@ th {
 }
 
 .card.nightMode th {
-    border: 1px solid gray;
+    border: 1px solid grey;
 }
 
 td {
@@ -176,7 +176,7 @@ td {
 }
 
 .card.nightMode td {
-    border: 1px solid gray;
+    border: 1px solid grey;
 }
 
 .numero {
@@ -217,7 +217,7 @@ td {
     }
 
     .card.nightMode tr:first-child th {
-        border-top: 1px solid gray;
+        border-top: 1px solid grey;
     }
 
     td, .card.nightMode td {
