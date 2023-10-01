@@ -30,13 +30,13 @@
 
             <h5>Lecturas</h5>
             <div>
-                <p class="kyokasho mediano separable">{{Kun-Yomi}}</p>
+                <p class="kyokasho mediano separable atenuable">{{Kun-Yomi}}</p>
                 <div style="text-align: center">
                     <span style="font-size:50%; color:gray; vertical-align: bottom">KUN</span>
                     <hr class="w-50" style="margin-top:4px; margin-bottom:4px;">
                     <span style="font-size:50%; color:gray; vertical-align: top">ON</span>
                 </div>
-                <p class="kyokasho mediano separable">{{On-Yomi}}</p>
+                <p class="kyokasho mediano separable atenuable">{{On-Yomi}}</p>
             </div>
 
             <h5>Trazos</h5>
@@ -171,6 +171,45 @@
         for (let i = 0; i < separables.length; i++) {
             let separable = separables[i];
             separable.innerText = separable.innerText.replace(/・/g, "\n")
+        }
+    }();
+
+
+    void function () {
+
+        let atenuables = document.getElementsByClassName("atenuable");
+
+        const inicio = '＜';
+        const fin = '＞';
+
+        for (let i = 0; i < atenuables.length; i++) {
+
+            let atenuable = atenuables[i];
+
+            let resultado = '';
+
+            let str = atenuable.innerText;
+
+            for (let i = 0; i < str.length; i++) {
+
+                let letra = str.charAt(i);
+
+                if (letra === inicio) {
+                    letra = '';
+                    let j = i + 1;
+                    while (j < str.length && str.charAt(j) !== fin) {
+                        letra += str.charAt(j);
+                        j++;
+                    }
+                    i = j - 1;
+
+                    resultado += '<span class="gris">' + letra + '</span>';
+                } else if (letra !== fin) {
+                    resultado += letra;
+                }
+            }
+
+            atenuable.innerHTML = resultado;
         }
     }();
 
